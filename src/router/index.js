@@ -1,6 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
+import PersonCenter from '@/components/person/PersonCenter'
+
+import PersonInfo from '@/components/person/PersonInfo'
+
+import PersonAccount from '@/components/person/PersonAccount'
+
+import PersonAbout from '@/components/person/personabout/personabout'
+
+import PersonImage from '@/components/person/personabout/personimage'
+
+import PersonMore from '@/components/person/personabout/personmore'
+
 Vue.use(Router)
 
 export default new Router({
