@@ -1,0 +1,138 @@
+<template>
+  <div id="admin">
+    <el-container>
+      <el-aside width="200px">
+        <div class="title">maxs MS</div>
+        <ul class="left-nav">
+          <li
+            v-for="(item,index) in navData"
+            :key="index"
+            @click="clickItem(index,item.path)"
+            :class="isActive==index?'current':''"
+          >{{item.name}}</li>
+        </ul>
+      </el-aside>
+      <el-main>
+        <div class="head">
+          <div class="head-left">
+            <i class="iconfont"></i>
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div class="head-right">
+            <div class="tips"></div>
+            <div class="per-info">
+              <div class="avatar"></div>
+              <div class>banana</div>
+            </div>
+          </div>
+        </div>
+        <div class="view">
+          <router-view></router-view>
+        </div>
+      </el-main>
+    </el-container>
+  </div>
+</template>
+
+
+
+<script>
+export default {
+  data() {
+    return {
+      isActive: 0,
+      navData: [
+        {
+          name: "首页",
+          path: "/admin"
+        },
+        {
+          name: "商品上下架",
+          path: "/admin/goodsHandle"
+        },
+        {
+          name: "订单管理",
+          path: "/admin/goodsHandle"
+        },
+       {
+          name: "用户管理",
+          path: "/admin/goodsHandle"
+        },
+      ]
+    };
+  },
+  methods: {
+    clickItem(itemIndex,path) {
+      this.isActive = itemIndex;
+      this.$router.push(path)
+    }
+  }
+};
+</script>
+
+
+<style lang="scss" scoped>
+#admin,
+.el-container {
+  height: 100%;
+}
+.el-aside {
+  background-color: #fff;
+  color: #3568ff;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 0 red;
+  .left-nav {
+    li {
+      height: 60px;
+      line-height: 60px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .current {
+      background: #366af4;
+      color: #fff;
+      border-left: 4px solid #ccc;
+    }
+  }
+}
+.view{
+    box-sizing: border-box;
+    padding: 40px 20px 0 40px
+}
+.title {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background: #fff;
+  color: #3568ff;
+  border-bottom: 1px solid #ccc;
+}
+
+.el-main {
+  background-color: #e9eef3;
+  color: #333;
+  padding: 0;
+  .head {
+    height: 80px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 20px;
+    .head-left {
+      margin-left: 40px;
+      input {
+        outline: none;
+        border-radius: 10px;
+        border: none;
+        background: #f8f9fe;
+        height: 30px;
+        line-height: 30px;
+        box-sizing: border-box;
+        padding-left: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+</style>
