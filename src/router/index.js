@@ -23,6 +23,37 @@ export default new Router({
                   component:()=>import("@/components/list"),
               }
           ]
-      }
-  ]
+      },
+      {
+        path: '/personcenter',
+        component: PersonCenter,
+        children:[
+          {
+            path: 'personinfo',
+            component: PersonInfo,
+            redirect:'personinfo/personabout',
+            children:[
+              {
+                path: 'personabout',
+                component: PersonAbout,              
+              },
+              {
+                path: 'personimage',
+                component: PersonImage,              
+              },
+              {
+                path: 'personmore',
+                component: PersonMore,              
+              },
+            ]
+          },
+          {
+            path: 'personaccount',
+            component: PersonAccount,
+          }
+        ]
+      },
+    ],
+    linkActiveClass: 'link-active'
+ 
 })
