@@ -80,4 +80,8 @@ export default {
     font-size: 14px;
   }
 }
+.page{
+  margin-top:15px;
+  float: right;
+}
 </style>

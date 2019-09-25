@@ -15,7 +15,7 @@
       <el-main>
         <div class="head">
           <div class="head-left">
-            <i class="iconfont"></i>
+            <i class="icon el-icon-search" @click="search"></i>
             <input type="text" placeholder="Search..." />
           </div>
           <div class="head-right">
@@ -65,6 +65,9 @@ export default {
     clickItem(itemIndex,path) {
       this.isActive = itemIndex;
       this.$router.push(path)
+    },
+    search(){
+      console.log("232323")
     }
   }
 };
@@ -79,19 +82,21 @@ export default {
 .el-aside {
   background-color: #fff;
   color: #3568ff;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #f6f7fc;
   box-shadow: 2px 0 0 red;
   .left-nav {
+    font-size: 14px;
     li {
       height: 60px;
       line-height: 60px;
       cursor: pointer;
       text-align: center;
+     
     }
     .current {
       background: #366af4;
       color: #fff;
-      border-left: 4px solid #ccc;
+      border-left: 4px solid #adb9f8;
     }
   }
 }
@@ -105,7 +110,7 @@ export default {
   text-align: center;
   background: #fff;
   color: #3568ff;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #f6f7fc;
 }
 
 .el-main {
@@ -121,6 +126,13 @@ export default {
     padding-top: 20px;
     .head-left {
       margin-left: 40px;
+      position: relative;
+      .icon{
+        position: absolute;
+        left: 2px;
+        top: 6px;
+        cursor: pointer;
+      }
       input {
         outline: none;
         border-radius: 10px;
