@@ -19,10 +19,15 @@
             <input type="text" placeholder="Search..." />
           </div>
           <div class="head-right">
-            <div class="tips"></div>
+            <div class="tips">
+              <i class="el-icon-bell"></i>
+            </div>
             <div class="per-info">
               <div class="avatar"></div>
-              <div class>banana</div>
+              <div class="name">
+                <span>banana</span>
+                <i class="el-icon-caret-bottom"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -54,20 +59,20 @@ export default {
           name: "订单管理",
           path: "/admin/goodsHandle"
         },
-       {
+        {
           name: "用户管理",
           path: "/admin/goodsHandle"
-        },
+        }
       ]
     };
   },
   methods: {
-    clickItem(itemIndex,path) {
+    clickItem(itemIndex, path) {
       this.isActive = itemIndex;
-      this.$router.push(path)
+      this.$router.push(path);
     },
-    search(){
-      console.log("232323")
+    search() {
+      console.log("232323");
     }
   }
 };
@@ -91,7 +96,6 @@ export default {
       line-height: 60px;
       cursor: pointer;
       text-align: center;
-     
     }
     .current {
       background: #366af4;
@@ -100,9 +104,9 @@ export default {
     }
   }
 }
-.view{
-    box-sizing: border-box;
-    padding: 40px 20px 0 40px
+.view {
+  box-sizing: border-box;
+  padding: 40px 20px 0 40px;
 }
 .title {
   height: 80px;
@@ -124,10 +128,11 @@ export default {
     justify-content: space-between;
     box-sizing: border-box;
     padding-top: 20px;
+    padding-right: 20px;
     .head-left {
       margin-left: 40px;
       position: relative;
-      .icon{
+      .icon {
         position: absolute;
         left: 2px;
         top: 6px;
@@ -145,6 +150,35 @@ export default {
         font-size: 12px;
       }
     }
+    .head-right {
+      display: flex;
+      flex-direction: row;
+      .tips{
+        margin-right: 20px;
+      }
+      i {
+        color: #3568ff;
+        line-height: 30px;
+      }
+      .per-info {
+        display: flex;
+        flex-direction: row;
+        .avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+          margin-right: 20px;
+        }
+        .name {
+          font-weight: 500;
+          line-height: 30px;
+        }
+      }
+    }
   }
+}
+.el-icon-caret-bottom{
+  cursor: pointer;
 }
 </style>
