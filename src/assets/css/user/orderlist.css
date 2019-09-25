@@ -1,0 +1,490 @@
+body {
+  font: 12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+  background: #fff;
+}
+
+table {
+  display: table;
+  border-spacing: 2px;
+  border-color: grey;
+  border-collapse: collapse;
+  line-height: 20px;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+
+.container .my-center {
+  padding-top: 10px;
+}
+
+.container .my-center .my-center-left {
+  padding: 20px 0;
+}
+
+.my-center .my-center-right .right-main {
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.my-center .my-center-right .mod-comm {
+  padding: 10px 20px 20px;
+  background-color: #fff;
+}
+
+.my-center-right .right-main  {
+  padding: 10px 0 0;
+}
+
+.right-main  h3 {
+  float: left;
+  font-size: 14px;
+  color: #666;
+  font-family: '\5b8b\4f53';
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.right-main .order-box  {
+  padding: 10px 0;
+}
+
+.order-box .mt {
+  padding-bottom: 10px;
+}
+
+.order-box .extra-l {
+  float: left;
+}
+
+.order-box .extra-l li {
+  float: left;
+  padding-left: 20px;
+}
+
+
+.order-box .extra-r {
+  float: right;
+}
+
+.order-box .extra-r li {
+  float: left;
+  padding: 0;
+  padding-right: 20px;
+}
+
+.order-box  .extra-l li a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  color: #333;
+}
+
+.order-box  .extra-l li a.curr {
+  padding-bottom: 0;
+  color: #e4393c;
+  border-bottom: 2px solid #e4393c;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.order-box .extra-l li a:hover {
+  color: #e4393c;
+}
+
+.order-box .extra-r a:hover {
+  color: #e4393c;
+}
+
+.order-box .order-tb {
+  width: 100%;
+}
+
+.order-tb thead th {
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #f5f5f5;
+  color: #666;
+  font-weight: 400;
+}
+
+.order-tb .ordertime-cont {
+  position: relative;
+  float: left;
+  z-index: 10;
+  width: 138px;
+  cursor: pointer;
+}
+
+.order-tb .ordertime-cont .time-txt {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 12px;
+  border: 1px solid #f5f5f5;
+}
+
+.order-tb .ordertime-hover .time-txt {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.12);
+}
+
+.order-tb .ordertime-cont .time-txt b {
+  position: absolute;
+  width: 7px;
+  height: 4px;
+  right: 18px;
+  top: 13px;
+  overflow: hidden;
+  vertical-align: middle;
+  background: url(../../img/user-center/order-icons.png) -37px -207px no-repeat;
+}
+
+.order-tb .ordertime-hover .time-txt b {
+  background-position: -20px -207px;
+}
+
+.order-tb .ordertime-hover .time-txt .blank {
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 136px;
+  top: 21px;
+  left: 0;
+  background: #fff;
+  z-index: 3;
+}
+
+.order-tb .ordertime-cont .time-list {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  z-index: 2;
+  display: none;
+  width: 136px;
+  background: #fff;
+  border: 1px solid #f5f5f5;
+  border-top: 0;
+}
+
+.order-tb .ordertime-hover .time-list {
+  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,.12);
+}
+
+.order-tb .ordertime-cont .time-list li {
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.order-tb .ordertime-cont .time-list li:hover {
+  background: #f5f5f5;
+}
+
+.order-tb .ordertime-cont .time-list li:hover a {
+  color: #e4393c;
+}
+
+.order-tb .ordertime-cont .time-list li a {
+  display: block;
+  position: relative;
+  color: #666;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+
+.order-tb .ordertime-cont .time-list li a b {
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  width: 10px;
+  height: 7px;
+  overflow: hidden;
+}
+
+.order-tb .order-detail-txt {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+
+.ac {
+  text-align: center;
+}
+
+.order-tb .deal-state-cont {
+  position: relative;
+  z-index: 10;
+  width: 98px;
+  cursor: pointer;
+}
+
+.order-tb .deal-state-cont .state-txt {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 12px;
+  border: 1px solid #f5f5f5;
+}
+
+.order-tb .deal-state-hover .state-txt {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,.12);
+}
+
+.order-tb .deal-state-cont .state-txt b {
+  position: absolute;
+  width: 7px;
+  height: 4px;
+  right: 18px;
+  top: 13px;
+  overflow: hidden;
+  vertical-align: middle;
+  background: url(../../img/user-center/order-icons.png) -37px -207px no-repeat;
+}
+
+.order-tb .deal-state-cont .state-list {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  z-index: 2;
+  display: none;
+  width: 96px;
+  background: #fff;
+  border: 1px solid #f5f5f5;
+  border-top: 0;
+}
+
+.order-tb .deal-state-hover .state-list {
+  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,.12);
+}
+
+.order-tb .deal-state-cont .state-list li {
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+}
+
+.order-tb .deal-state-cont .state-list li:hover {
+  background: #f5f5f5;
+}
+
+.order-tb .deal-state-cont .state-list li:hover a {
+  color: #e4393c;
+}
+
+.order-tb .deal-state-cont .state-list li a {
+  display: block;
+  position: relative;
+  color: #666;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+}
+
+.order-tb .deal-state-cont .state-list li a.curr {
+  color: #e4393c;
+}
+
+.order-tb .deal-state-cont .state-list li a b {
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  width: 10px;
+  height: 7px;
+  overflow: hidden;
+}
+
+.order-tb .deal-state-cont .state-list li a.curr b {
+  background: url(../../img/user-center/order-icons.png) 0 -207px;
+}
+
+.order-tb thead th:nth-child(1) {
+  width: 55%;
+}
+
+.order-tb thead th:nth-child(2) {
+  width: 10%;
+}
+
+.order-tb thead th:nth-child(3) {
+  width: 10%;
+}
+
+.order-tb thead th:nth-child(4) {
+  width: 15%;
+}
+
+.order-tb thead th:nth-child(5) {
+  width: 10%;
+}
+
+.order-box .order-list {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.order-box .order-list .order-list-item {
+  margin-top: 20px;
+  border: 1px solid #f1f1f1;
+}
+
+.order-list .order-list-item .order-item {
+  width: 100%;
+}
+
+.order-list-item .order-item .item-head {
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  background: #f5f5f5;
+}
+
+.order-item .item-head .order-time {
+  float: left;
+  padding: 0 10px;
+}
+
+.order-item .item-head .order-seriaNumber {
+  float: left;
+  padding: 0 10px;
+}
+
+.order-item .item-head .order-seriaNumber b {
+  padding-left: 10px;
+  color: #333;
+}
+
+.order-item .item-info {
+  width: 100%;
+}
+
+.order-item .item-info .info {
+  float: left;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-right: 1px solid #f5f5f5;
+  text-align: center;
+}
+
+.order-item .item-info .item-detail {
+  width: 55%;
+}
+
+.item-info .item-detail .item-pic {
+  float: left;
+  width: 60%;
+  min-width: 300px;
+}
+
+.item-info .item-detail .img-box {
+  float: left;
+  height: 78px;
+  width: 78px;
+  overflow: hidden;
+  margin-right: 10px; 
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+.item-info .item-detail .item-desc {
+  color: #333;
+}
+
+
+.item-info .item-detail .item-number {
+  float: left;
+  width: 20%;
+  min-width: 100px;
+  text-align: left;
+}
+
+.item-info .item-detail .item-shouhou {
+  float: left;
+  width: 20%;
+  
+}
+
+.item-info .item-detail .item-shouhou a {
+  color: #333;
+}
+
+.item-info .item-detail .item-shouhou a:hover {
+  color: #e4393c;
+}
+
+.order-item .item-info .shouhuoren {
+  width: 10%;
+}
+
+.order-item .item-info .price {
+  width: 10%;
+}
+
+.order-item .item-info .item-status {
+  width: 15%;
+  color: #333;
+}
+
+.item-info .item-status .status-txt {
+  margin: 0px 30px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.item-info .item-status .item-detail-page {
+  padding-top: 5px;
+}
+
+.item-info .item-status .item-detail-page a {
+  color: #333;
+}
+
+.item-info .item-status .item-detail-page a:hover {
+  color: #e4393c;
+}
+
+.order-item .item-info .item-opera {
+  width: 10%;
+  border-right: none;
+}
+
+.item-info .item-opera .item-comment,
+.item-info .item-opera .item-buy {
+  line-height: 24px;
+}
+
+
+.order-item .item-info .item-opera a {
+  color: inherit;
+}
+
+.order-item .item-info .item-opera a:hover {
+  color: #e4393c;
+}

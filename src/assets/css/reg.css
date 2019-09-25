@@ -1,0 +1,144 @@
+body {
+  background: #f6f6f6;
+  font-size: 12px;
+}
+
+input {
+  font-family: 'Microsoft YaHei';
+  outline: none;
+}
+
+.log-wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.log-sec {
+  background: #fff url(../img/log-reg-forget/background1.jpg) no-repeat center top;
+  padding: 40px 0;
+  height: 450px;
+  margin-bottom: 20px;
+}
+
+.log-sec .main {
+  height: 100%;
+}
+
+.log-sec .main .box-border {
+  float: right;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px;
+}
+
+.main .box-border .login-box {
+  width: 330px;
+  min-height: 334px;
+  padding-bottom: 20px;
+  background: #fff;
+  position: relative;
+}
+
+.box-border .login-box .login-tab {
+  overflow: hidden;
+  width: 310px;
+  padding-left: 20px;
+  border-bottom: 1px solid #e7e7e7;
+  height: 46px;
+}
+
+.login-box .login-tab .tab-item {
+  float: left;
+  width: 60px;
+  text-align: center;
+  height: 45px;
+  margin: 0 10px;
+  line-height: 46px;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+
+.login-tab .tab-item a {
+  color: inherit;
+}
+.login-box .login-tab li.cur {
+  color: #f60;
+  font-size: 14px;
+  border-bottom: 1px solid #f60 !important;
+}
+
+.box-border .login-box .log-input {
+  padding: 5px 30px 0;
+  overflow: hidden;
+}
+
+.login-box .log-input .input-row {
+  position: relative;
+  margin-top: 20px;
+}
+
+.log-input .input-row input[type=text],
+.log-input .input-row input[type=password] {
+  border: solid 1px #d6d6d6;
+  height: 34px;
+  line-height: 28px\9;
+  width: 233px;
+  padding-left: 35px;
+  border-radius: 3px;
+}
+
+#user-txt {
+  background: url(../img/log-reg-forget/iconfont-yonghu.png) no-repeat 7px center;
+  background-size: 20px;
+}
+
+#user-pwd,
+#user-pwd-confirm {
+  background: url(../img/log-reg-forget/iconfont-psw.png) no-repeat 7px center;
+  background-size: 20px;
+}
+
+#user-email {
+  background: url(../img/log-reg-forget/iconfont-email.png) no-repeat 7px center;
+  background-size: 20px;
+}
+
+.log-input .psword .right{
+  float: right;
+}
+
+.log-input .psword a {
+  color: #333;
+  text-decoration: none;
+  outline: 0;
+  transition: color .1s;
+}
+
+.log-input .psword a:hover {
+  text-decoration: underline;
+  color: #ff6700;
+}
+
+.login-box .log-input .remember {
+  margin-top: 15px;
+}
+
+.log-input .input-row .tishi {
+  position: absolute;
+  top: 100%;
+  line-height: 20px;
+  color: #f60;
+  padding-left: 35px;
+}
+
+.login-box .log-input #logbtn {
+  width: 270px;
+  border: 0;
+  background: #f60;
+  border-radius: 3px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: 'Microsoft YaHei';
+}

@@ -1,0 +1,272 @@
+body {
+  font: 14px tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+  background: #fff;
+}
+
+header>#top {
+  margin: 30px auto;
+}
+
+.container {
+  padding-bottom: 50px;
+  background-color: #f0f3ef;
+}
+
+.container .my-center .sub {
+  width: 200px;
+}
+
+.container .my-center .my-center-left {
+  float: left;
+}
+
+.my-center .sub .menu-box {
+  width: 180px;
+  background-color: #fff;
+  color: #333;
+}
+
+.sub .menu-box .menu {
+  padding: 15px 20px;
+}
+
+.menu-box .menu .menu-item {
+  line-height: 32px;
+}
+
+.menu .menu-item a {
+  font-size: 14px;
+  color: #333;
+  transition: all .4s ease;
+}
+
+.menu .menu-item a:hover {
+  color: #c81623;
+}
+
+.container .my-center .my-center-right {
+  padding: 20px 0;
+  width: 1000px;
+  float: left;
+}
+
+.my-center .my-center-right .right-box-main {
+  
+  float: left;
+  width: 700px;
+}
+
+.my-center .my-center-right .right-box-aside {
+  float: right;
+  width: 280px;
+} 
+
+.my-center-right .right-box-main .main-box {
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.right-box-main .main-box .mt {
+  padding: 0 20px;
+  height: 55px;
+  line-height: 55px;
+  border-bottom: 1px solid #f0f3ef;
+  overflow: visible;
+}
+
+.main-box .mt h3 {
+  font-size: 16px;
+  color: #333;
+}
+
+.main-box .mc .nav {
+  padding: 15px 20px;
+  height: 90px;
+}
+
+.mc .nav .item {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 13px 0 0;
+  margin: 0 20px;
+  height: 90px;
+  width: 90px;
+  text-align: center;
+  color: #333;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.mc .nav .item:hover {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 16px 0 rgba(0,0,0,.1);
+  box-shadow: 0 0 16px 0 rgba(0,0,0,.1);
+}
+
+.mc .nav .icon-sprite {
+  position: relative;
+  display: block;
+}
+
+.icon-sprite {
+  background: url(../../img/user-center/sprite.png) no-repeat;
+}
+
+.mc .nav .item0 .icon-sprite {
+  margin: 3px auto;
+  width: 44px;
+  height: 35px;
+  background-position: 0 -200px;
+}
+
+.mc .nav .item0:hover .icon-sprite {
+  background-position: 0 -250px;
+}
+
+
+.mc .nav .name {
+  padding-top: 10px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.mc .nav .item1 .icon-sprite {
+  margin: 1px auto 2px;
+  width: 40px;
+  height: 38px;
+  background-position: -80px -200px;
+}
+
+.mc .nav .item1:hover .icon-sprite {
+  background-position: -80px -250px;
+}
+
+.mc .nav .item2 .icon-sprite {
+  margin: 1px auto 2px;
+  width: 41px;
+  height: 38px;
+  background-position: -160px -200px;
+}
+.mc .nav .item2:hover .icon-sprite {
+  background-position: -160px -250px;
+}
+
+.mc .nav .item3 .icon-sprite {
+  margin: 0 auto 1px;
+  width: 39px;
+  height: 41px;
+  background-position: -240px -200px;
+}
+
+.mc .nav .item3:hover .icon-sprite {
+  background-position: -240px -250px;
+}
+
+.mc .nav .item4 .icon-sprite {
+  margin: 0 auto;
+  width: 41px;
+  height: 41px;
+  background-position: -320px -200px;
+}
+
+.mc .nav .item4:hover .icon-sprite {
+  background-position: -320px -250px;
+}
+
+.main-box-1 .mc .cart {
+  padding: 60px 0 90px;
+  color: #999;
+  text-align: center;
+  background-color: #fff;
+}
+
+.main-box-1 .mc .cart::before {
+    content: "";
+    display: inline-block;
+    margin-right: 20px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    background: url(../../img/user-center/sprite.png) no-repeat -430px -95px;
+}
+
+.my-center-right .right-box-main .main-box-2 {
+  padding: 15px 20px;
+  overflow: hidden;
+}
+
+.my-center-right .right-box-aside .aside-box {
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.right-box-aside .aside-box .mt {
+  padding: 0 20px;
+  height: 55px;
+  line-height: 55px;
+  border-bottom: 1px solid #f0f3ef;
+  overflow: visible;
+}
+
+.aside-box .mc ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px;
+  height: 60px;
+}
+
+.aside-box .mc ul li{
+  height: 60px;
+  line-height: 30px;
+  color: #333;
+  font-size: 16px;
+}
+
+.aside-box .mc ul li .text{
+  color: #666;
+  font-size: 12px;
+}
+
+.aside-box .mc ul li a:hover {
+  color: #c81623;
+}
+
+.aside-box-2 .mt h3 {
+  float: left;
+  font-weight: 400;
+}
+
+.aside-box-2 .mt .more {
+  position: relative;
+  float: right;
+  padding-right: 10px;
+  color: #666;
+}
+
+.aside-box-2 .mt .more::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 22px;
+  width: 5px;
+  height: 10px;
+  background: url(../../img/user-center/sprite.png) no-repeat -81px -161px;
+}
+
+.aside-box-2 .mt .more:hover {
+  color: #c81623;
+}
+
+.aside-box-2 .mc .slick-list {
+  margin: 15px;
+  padding: 0 1px;
+  height: 100px;
+  overflow: hidden;
+}

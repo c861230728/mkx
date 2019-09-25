@@ -1,0 +1,104 @@
+footer{
+    background: #f4f4f4;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+footer .mod_service{
+    padding: 30px 0;
+    margin: 0 auto;
+    width: 1200px;
+}
+footer .mod_service ul{
+    font-size: 0;
+    display: flex;
+    justify-content: space-around;
+}
+footer .mod_service h5{
+    display: inline-block;
+    vertical-align: middle;
+}
+footer .mod_service .text{
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+}
+footer .photo{
+    width: 36px;
+    height: 42px;
+}
+footer .mod_help{
+    padding: 20px 0;
+    border-top:1px #dedede solid;
+    width: 1200px;
+    margin: 0 auto;
+}
+footer .mod_help ul{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+footer .mod_help .link{
+    display: block;
+    font-size: 13px;
+    margin-top: 10px;
+}
+footer .mod_copy{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+    border-top:1px solid #e1e1e1;
+}
+footer .mod_copy ul{
+    font-size: 0px;
+    text-align: center;
+}
+footer .mod_copy li{
+    display: inline-block;
+    font-size: 13px;
+    padding: 0 10px;
+}
+footer .mod_copy li:not(:first-child){
+    border-left: 1px solid #e1e1e1;
+}
+footer a:hover{
+    color:#f00;
+}
+footer .mod_more{
+    text-align: center;
+    font-size: 13px;
+    color:#7e8c8d;
+}
+footer .mod_more span{
+    display: inline-block;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+footer .mod_more li>span:not(:first-child){
+    border-left: #dedede 1px solid;
+}
+footer .mod_link .photo_link{
+    display: inline-block;
+    margin: 0 3px;
+    width: 103px;
+    height: 32px;
+    overflow: hidden;
+    margin: 30px 0;
+}
+footer .mod_link{
+    text-align: center;
+}
+footer .mod_link li{
+    display: inline-block;
+}
+footer .mod_more .icon{
+    font-size: 10px;
+    margin: 0;
+    margin-right: 8px;
+    padding: 0;
+}
