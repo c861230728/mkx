@@ -1,32 +1,60 @@
 <template>
-    <div class="bind-account">
-        <div class="account">
-            绑定账号
-        </div>
-        <div class="bind-list">
-            绑定
-        </div>
+    <div class="bind-container">
+        账号绑定
+        <div class="bind-account" v-for="(item, index) in bindlist" :key="index">
+           <div class="bind-account-left" >
+               <span>{{ index+1 }}.</span> <span>{{ item.type }}</span> <span>{{ item.value }} </span>
+           </div>
+           <button class="bind-account-right" >
+                绑定
+           </button>
+       </div>
     </div>
 </template>
 <script>
 export default {
-    
+    data() {
+        return {
+           bindlist:[
+               {id:1,type:'qq',value:'未绑定'},
+               {id:2,type:'wechat',value:'已绑定'},
+               {id:3,type:'phone',value:'已绑定'},
+               {id:4,type:'email',value:'未绑定'}
+           ]
+        }
+    },
 }
 </script>
 <style lang="css" scope>
-    .bind-account{
-        display: flex;
-    }
-    .account{
-        flex: 6;
-        box-shadow: 2px 2px 4px 2px rgb(163, 162, 162);
+    .bind-container{
         text-align: left;
         text-indent: 20px;
-        padding: 10px;
-        margin-top:12px; 
+        margin-top: 12px;
     }
-    .bind-user{
-        flex:4;
+    .bind-account{
+        display: flex;
+        margin:5vh;
+        box-shadow: 2px 2px 4px #333;
+        width: 40%;
+        padding: 30px;
+       
+    }
+    .bind-account-left{
+        flex: 8;
+    }
+    .bind-account-left span{
+        width: 3;
+        align-items:center; 
+        font-size:15px; 
+        margin: 12px 0px;
+    }
+    .bind-account-right{
+        flex: 2;
+        padding: 2px;
+        box-shadow: 2px 2px 4px #333;
+        background-color: red;
+        color: #fff;
+        border: none;
         
     }
 </style>

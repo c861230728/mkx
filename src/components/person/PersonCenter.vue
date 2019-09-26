@@ -24,6 +24,7 @@ export default {
         width: 100vw;
         height: 100vh;
         background-color: #eee;
+        overflow: hidden;
     }
     .main{
         position: absolute;
@@ -43,7 +44,12 @@ export default {
    .right{
        flex: 8.5;
        height: 70vh;
+       overflow-y: scroll;
+       overflow-x: hidden;       
    }
+    .right::-webkit-scrollbar{
+        display: none;
+    }
     .left-heade{
         display: block;
         padding: 5px;
