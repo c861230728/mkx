@@ -4,7 +4,7 @@
              <img :src="person.img_url" alt="">
         </div>
         <div class="image-right">
-            <button class="edit">修改</button>        
+            <input type="file"  class="edit" >     
         </div>
     </div>
 </template>
@@ -54,7 +54,7 @@ export default {
         flex: 4;
         margin-top:12px; 
     }
-    .image-right button{
+    .image-right .edit{
         width: 90%;
         border: none;
         color: #fff;

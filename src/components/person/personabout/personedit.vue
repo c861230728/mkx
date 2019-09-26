@@ -1,9 +1,9 @@
 <template>
     <div class="edit-container">
-        <p>用户名:&nbsp;<input type="text" :value="person.username"></p>
-        <p>登陆名:&nbsp;<input type="text" :value="person.loginname"></p>     
-        <p>邮箱&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" :value="person.email"></p> 
-        <p>地址&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" :value="person.address"></p> 
+        <p>用户名:&nbsp;<input type="text"  v-model="person.username"></p>
+        <p>登陆名:&nbsp;<input type="text"  v-model="person.loginname"></p>     
+        <p>邮箱&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" v-model="person.email"></p> 
+        <p>地址&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" v-model="person.address"></p> 
 
         <P><button @click="edit">确认修改</button></P>
     </div>
@@ -20,22 +20,14 @@ export default {
                 address:'东胜神州傲来国花果山水帘洞',
                 img_url:'http://img4.cache.netease.com/photo/0001/2010-04-17/64EFS71V05RQ0001.jpg',
                 usertype:'个人用户'
-            }
-        }
-    },
-    filters:{
-        aboutuser(gender){
-           if(gender == 1){
-               return "男";
-           }else {
-               return "女";
-           }
+            }, 
+                       
         }
     },
     methods:{
-        edit(){
-
-        }
+       edit(){
+           console.log(this.person.username);
+       }
     }
 }
 </script>

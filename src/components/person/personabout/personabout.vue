@@ -82,8 +82,8 @@ export default {
         box-shadow: 2px 2px 4px 2px rgb(163, 162, 162);
     }
     .img-header{
-        flex: 2.5;
-        height: 13vh;
+        flex: 3;
+        height: 12vh;
         overflow: hidden;
         border-radius: 20vw;
         margin:1vh 2vh; 
@@ -93,7 +93,7 @@ export default {
         height: 100%;
     }
     .img-content{
-        flex: 7.5;
+        flex: 8;
         height: 15vh;
     }
     .img-content p{
