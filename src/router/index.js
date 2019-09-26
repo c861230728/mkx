@@ -18,6 +18,31 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/admin',
+      component:()=>import("@/view/admin/home.vue"),
+      children:[
+        {path:'goodsHandle',component:()=>import("@/view/admin/goodsAdmin/goodsHandle")}
+      ]
+    },
+    {
+      path: '/login',
+      component: () => import("@/components/login")
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: () => import("@/components/index"),
+      children: [{
+          path: 'home',
+          component: () => import("@/components/home"),
+        },
+        {
+          path: 'list',
+          component: () => import("@/components/list"),
+        }
+      ]
+    },
       {
         path:'/login',
           component:()=>import("@/components/login")
@@ -68,6 +93,8 @@ export default new Router({
         ]
       },
     ],
-    linkActiveClass: 'link-active'
+    linkActiveClass: 'link-active',
  
+   
+
 })

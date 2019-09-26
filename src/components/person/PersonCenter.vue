@@ -66,7 +66,7 @@ export default {
     }
     .left-person{
         display: block;
-        padding: 5px;
+        padding: 15px;
         font-size: 15px;
         text-align: center;
         overflow: hidden;
@@ -76,7 +76,7 @@ export default {
     }
     .left-account{
         display: block;
-        padding: 5px;
+        padding: 15px;
         font-size: 15px;
         text-align: center;
         overflow: hidden;
