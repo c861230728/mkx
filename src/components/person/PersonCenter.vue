@@ -15,13 +15,7 @@
 </template>
 <script>
 export default {
-    data() {
-        return {
-            person:{
-                name:'张三'
-            }
-        }
-    },
+    
 }
 </script>
 <style scoped>

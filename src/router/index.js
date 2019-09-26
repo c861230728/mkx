@@ -12,7 +12,7 @@ import PersonAbout from '@/components/person/personabout/personabout'
 
 import PersonImage from '@/components/person/personabout/personimage'
 
-import PersonMore from '@/components/person/personabout/personmore'
+import PersonEdit from '@/components/person/personabout/personedit'
 
 Vue.use(Router)
 
@@ -40,6 +40,7 @@ export default new Router({
       {
         path: '/personcenter',
         component: PersonCenter,
+        redirect:'/personcenter/personinfo',
         children:[
           {
             path: 'personinfo',
@@ -55,8 +56,8 @@ export default new Router({
                 component: PersonImage,              
               },
               {
-                path: 'personmore',
-                component: PersonMore,              
+                path: 'personedit',
+                component: PersonEdit,              
               },
             ]
           },
