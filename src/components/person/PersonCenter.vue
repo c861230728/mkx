@@ -60,7 +60,6 @@ export default {
         text-indent: 10px;
         font-weight: 600;
         overflow: hidden;        
-        text-decoration: none;
     }
     .left-heade:hover{
         color: red;
@@ -71,7 +70,6 @@ export default {
         font-size: 15px;
         text-align: center;
         overflow: hidden;
-        text-decoration: none;
     }
     .left-person:hover{
         color: red;
@@ -81,7 +79,6 @@ export default {
         padding: 5px;
         font-size: 15px;
         text-align: center;
-        text-decoration: none;
         overflow: hidden;
     }
     .left-account:hover{
