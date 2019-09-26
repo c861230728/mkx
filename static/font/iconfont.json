@@ -1,0 +1,51 @@
+{
+  "id": "1437175",
+  "name": "m'k'x",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1471044",
+      "name": "空调",
+      "font_class": "kongtiao",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "2044425",
+      "name": "电视",
+      "font_class": "dianshi",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "4495418",
+      "name": "油烟机",
+      "font_class": "youyanji",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "4762912",
+      "name": "冰箱",
+      "font_class": "bingxiang",
+      "unicode": "e90b",
+      "unicode_decimal": 59659
+    },
+    {
+      "icon_id": "5205029",
+      "name": "电吹风",
+      "font_class": "dianchuifeng",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "6420503",
+      "name": "电饭煲",
+      "font_class": "dianfanbao-",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}
