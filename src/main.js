@@ -21,6 +21,12 @@ axios.defaults.headers.post['Content-Type'] = 'http://luoyuequan.cn';
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 
+// 引入element-UI
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+//引入重置css
+import '../static/css/reset.css'
+
 /* eslint-disable no-new */
 var vm=new Vue({
   el: '#app',

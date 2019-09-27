@@ -13,6 +13,11 @@ import PersonAbout from '@/components/person/personabout/personabout'
 import PersonImage from '@/components/person/personabout/personimage'
 
 import PersonEdit from '@/components/person/personabout/personedit'
+// Liu_router
+import shop_car from '@/components/shopCar/shop_car'
+import god_car_list from '@/components/shopCar/god_car_list'
+import god_list from '@/components/shopCar/god_list'
+
 
 Vue.use(Router)
 
@@ -48,6 +53,24 @@ export default new Router({
         path:'/login',
           component:()=>import("@/components/login")
       },
+      // Liu_router
+      {
+          path: '/shop_car',
+          name: 'shop_car',
+          component: shop_car
+      },
+      {
+          path: '/shop_car/god_car_list/:userName',
+          name: 'god_car_list',
+          component: god_car_list
+      },
+      {
+          path: '/shop_car/god_list/',
+          name: 'god_list',
+          component: god_list
+      },
+
+      //
       {
           path:'/index',
           name:'index',
@@ -75,11 +98,11 @@ export default new Router({
             children:[
               {
                 path: 'personabout',
-                component: PersonAbout,              
+                component: PersonAbout,
               },
               {
                 path: 'personimage',
-                component: PersonImage,              
+                component: PersonImage,
               },
               {
                 path: 'personedit',
