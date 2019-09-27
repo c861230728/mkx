@@ -7,16 +7,6 @@ import store from './vuex'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-// 注册axios 
-import axios from 'axios'
-import Vueaxios from 'vue-axios'
-
-Vue.use(Vueaxios,axios);
-
-// 配置全局的url
-axios.defaults.baseURL = "http://luoyuequan.cn/80";
-
-axios.defaults.headers.post['Content-Type'] = 'http://luoyuequan.cn';
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
@@ -27,11 +17,16 @@ Vue.use(ElementUI);
 //引入重置css
 import '../static/css/reset.css'
 
+//引入axios
+//  更改全局 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+import http from './axios/http.js' // axios实例化后引入取名http
+Vue.prototype.http = http
+
 /* eslint-disable no-new */
 var vm=new Vue({
   el: '#app',
   router,
-    store,
+  store,
   components: { App },
   template: '<App/>'
 })

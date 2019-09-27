@@ -1,11 +1,12 @@
 <template>
     <div class="worp-about">
        <div class="about-left">
-           <p><span>用户名:&nbsp;&nbsp;</span>{{ person.username }}</p>
-           <p><span>登陆名:&nbsp;&nbsp;</span>{{ person.loginname }}</p>
-           <p><span>性别:&nbsp;&nbsp;</span>{{ person.gender | aboutuser }}</p>
+           <p><span>用户名:&nbsp;&nbsp;</span>{{ person.userAccount }}</p>
+           <p><span>登陆名:&nbsp;&nbsp;</span>{{ person.nickName }}</p>
+           <p><span>性别:&nbsp;&nbsp;</span>{{ person.sex | aboutuser }}</p>
            <p><span>邮箱:&nbsp;&nbsp;</span>{{ person.email }}</p>
-           <p><span>地址:&nbsp;&nbsp;</span>{{ person.address }}</p> 
+           <p><span>地址:&nbsp;&nbsp;</span>{{ person.insert }}</p> 
+           <p><span>地址:&nbsp;&nbsp;</span>{{ person.userType | abouttype }}</p> 
        </div>
        <div class="about-right">
             <div class="about-image">
@@ -13,36 +14,47 @@
                     <img :src="person.img_url" alt="">
                 </div>
                  <div class="img-content">
-                     <p><span>用户名:&nbsp;&nbsp;</span>{{ person.username }}</p>
-                     <p><span>性别:&nbsp;&nbsp;</span>{{ person.gender | aboutuser }}</p>
-                     <p><span>用户类型:&nbsp;&nbsp;</span>{{ person.usertype}}</p>
+                     <p><span>用户名:&nbsp;&nbsp;</span>{{ person.nickName }}</p>
+                     <p><span>性别:&nbsp;&nbsp;</span>{{ person.sex | aboutuser }}</p>
+                     <p><span>用户类型:&nbsp;&nbsp;</span>{{ person.usertype | abouttype}}</p>
                 </div>
             </div>       
        </div>
     </div>
 </template>
 <script>
+
 export default {
     data() {
         return {
-            person:{
-                username:'张三',
-                loginname:'Ajeo',
-                gender:'1',
-                email:'23345@QQ.COM',
-                address:'东胜神州傲来国花果山水帘洞',
-                img_url:'http://img4.cache.netease.com/photo/0001/2010-04-17/64EFS71V05RQ0001.jpg',
-                usertype:'个人用户'
-            }
+            person:[{
+                userAccount: "",
+                nickName: "",
+                sex: 1,
+                email: "1111@qq.com",
+                insert: "",
+                credit: "88.0",
+                userType: 1,
+                img_url:''
+            }],
+            userId:'',
+            token:'',
         }
     },
     filters:{
-        aboutuser(gender){
-           if(gender == 1){
+        aboutuser(sex){
+           if(sex == 1){
                return "男";
            }else {
                return "女";
            }
+        },
+        abouttype(usertype){
+            if(usertype == 1){
+                return '初级会员'
+            }else {
+                return '高级会员'
+            }
         }
     },
     created(){
@@ -50,19 +62,19 @@ export default {
     },
     methods:{
         getUserInfo(){
-            let _this = this;
-            this.axios
-            .post('/user/baseInfo',{
-                params:{
-                    userId:'1'
+            this.userId = localStorage.getItem('userID');
+            this.token = localStorage.getItem('token')
+            this.http.service.post('/user/baseInfo',{'userId':this.userId,'token':this.token}).then(
+                (res)=>{
+                    console.log(res.data);
+                    this.person = res.data;
                 }
-            })
-            .then((res)=>{
-                console.log(res.data);
-            })
-            .catch((res)=>{
-                console.log(res);
-            })
+            )
+            .catch(
+                (res)=>{
+                    console.log(res)
+                }
+            )
         },
     },
     
