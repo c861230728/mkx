@@ -35,40 +35,60 @@ export default {
   data: function () {
     return {
       godsList: [
-        {id: 1, userName: 'Oxygen', productName: 'Mta10', godsNumber: 1, stock: 10, godsImg: '', selected: false},
-        {id: 2, userName: '1451', productName: '苹果10', godsNumber: 1, stock: 10, godsImg: '', selected: false},
-        {id: 3, userName: 'dsa4', productName: '小米Pro', godsNumber: 1, stock: 10, godsImg: '', selected: false},
-        {id: 4, userName: 'ss1', productName: 'iPad', godsNumber: 1, stock: 10, godsImg: '', selected: false}
+        {id: 1, productName: 'Mta10', godsNumber: 1, stock: 10, godsImg: '', selected: false},
+        {id: 2, productName: '苹果10', godsNumber: 1, stock: 10, godsImg: '', selected: false},
+        {id: 3, productName: '小米Pro', godsNumber: 1, stock: 10, godsImg: '', selected: false},
+        {id: 4, productName: 'iPad', godsNumber: 1, stock: 10, godsImg: '', selected: false}
       ],
-      userName: 'Oxygen',
+      userName: 'aa',
       dialogVisible: false,
-      userPassword: ''
+      userPassword: 'aa'
     }
   },
+    created(){
+
+    },
+    mounted () {
+       this.canChooseShopCar()
+    },
   methods: {
-    delGodsCar () {
-      this.godsList = []
-    },
-    toGodsCar (data) {
-      let isLogin = false
-      if (isLogin) {
-        this.$router.push(
-          {path: '/shop_car/god_car_list/' + data}
-        )
-      } else {
-        this.dialogVisible = true
-      }
-    },
-    isUserTrue () {
-      if (this.userName == '111' && this.userPassword == '111') {
-        this.$router.push(
-          {path: '/shop_car/god_car_list/' + this.userName}
-        )
-        this.dialogVisible = false
-      } else {
-        this.$message.error('用户账号或者密码错误')
-      }
-    }
+      delGodsCar () {
+          this.godsList = []
+        },
+      toGodsCar (data) {
+          let isLogin = false
+          if (isLogin) {
+            this.$router.push(
+              {path: '/shop_car/god_car_list/' + data}
+            )
+          } else {
+            this.dialogVisible = true
+          }
+        },
+      isUserTrue () {
+          if (this.userName == '111' && this.userPassword == '111') {
+            this.$router.push(
+              {path: '/shop_car/god_car_list/' + this.userName}
+            )
+            this.dialogVisible = false
+          } else {
+            this.$message.error('用户账号或者密码错误')
+          }
+        },
+      //判断是否登录 购物车能否添加
+      canChooseShopCar(){ // {userAccount:'',pw:''}
+          console.log({user_account:this.userName,pw:this.userPassword})
+          this.http.service.post('/user/login',{'userAccount':this.userName,'pw':this.userPassword}).then(res=>{
+              if(res.status == 200) {
+                  console.log(res,1)
+              } else {
+                  this.$message.error('账号或者密码错误',2);
+              }
+          }).catch(err=>{
+                  console.log(err,3)
+              }
+          )
+      },
     // 弹出登录框
   }
 }

@@ -17,11 +17,10 @@ import PersonMore from '@/components/person/personabout/personmore'
 import shop_car from '@/components/shopCar/shop_car'
 import god_car_list from '@/components/shopCar/god_car_list'
 import god_list from '@/components/shopCar/god_list'
-
+import blank from '@/components/blank'
 
 Vue.use(Router)
-
-export default new Router({
+const router = new Router({
   routes: [
       {
         path:'/login',
@@ -31,12 +30,20 @@ export default new Router({
       {
           path: '/shop_car',
           name: 'shop_car',
-          component: shop_car
+          component: shop_car,
+      },
+      {
+          path: '/blank',
+          name: 'blank',
+          component: blank
       },
       {
           path: '/shop_car/god_car_list/:userName',
           name: 'god_car_list',
-          component: god_car_list
+          component: god_car_list,
+        /*  meta: {
+              requireAuth: true // 添加此字段 表示该路由需要登录权限才能进入
+          }*/
       },
       {
           path: '/shop_car/god_list/',
@@ -91,5 +98,23 @@ export default new Router({
       },
     ],
     linkActiveClass: 'link-active'
-
 })
+
+// 注册全局钩子用来拦截导航
+router.beforeEach((to, fro ,next) => {
+    let token = localStorage.getItem('token')
+    if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
+        if (token) {
+            next()
+        } else {
+           alert('请登录')
+            next({
+                path: '/login'
+            })
+        }
+    }else {
+        next()
+    }
+})
+export default router
+
