@@ -61,7 +61,7 @@ export default {
         },
         {
           name: "用户管理",
-          path: "/admin/goodsHandle"
+          path: "/admin/userAdmin"
         }
       ]
     };

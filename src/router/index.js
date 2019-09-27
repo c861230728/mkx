@@ -22,7 +22,8 @@ export default new Router({
       path: '/admin',
       component:()=>import("@/view/admin/home.vue"),
       children:[
-        {path:'goodsHandle',component:()=>import("@/view/admin/goodsAdmin/goodsHandle")}
+        {path:'goodsHandle',component:()=>import("@/view/admin/goodsAdmin/goodsHandle")},
+        {path:'userAdmin',component:()=>import("@/view/admin/userAdmin/userAdmin")}
       ]
     },
     {

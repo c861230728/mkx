@@ -44,7 +44,28 @@ export default {
                return "女";
            }
         }
-    }
+    },
+    created(){
+        this.getUserInfo();
+    },
+    methods:{
+        getUserInfo(){
+            let _this = this;
+            this.axios
+            .post('/user/baseInfo',{
+                params:{
+                    userId:'1'
+                }
+            })
+            .then((res)=>{
+                console.log(res.data);
+            })
+            .catch((res)=>{
+                console.log(res);
+            })
+        },
+    },
+    
 }
 </script>
 <style lang="css" scope> 
