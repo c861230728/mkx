@@ -23,7 +23,7 @@
 
       <div class="search-box">
         <div>
-          <input type="search" placeholder="请输入内容...." />
+          <input type="search" placeholder="请输入内容...."  v-model="searchVla" />
           <div class="search-btn">搜索</div>
         </div>
         <ul class="hotSearch">
@@ -150,7 +150,8 @@ export default {
         { title: "推荐2", imgSrc: "../../static/images/t2.jpg" },
         { title: "推荐3", imgSrc: "../../static/images/t3.jpg" },
         { title: "推荐4", imgSrc: "../../static/images/t4.jpg" }
-      ]
+      ],
+      searchVla:""
     };
   },
   methods: {
