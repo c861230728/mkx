@@ -181,7 +181,7 @@ export default {
     //获取数据
     listDate() {
       if (arguments[0].method == "get") {
-        console.log(arguments[0].url);
+       
         this.$axios
           .get(arguments[0].url)
           .then(response => {
