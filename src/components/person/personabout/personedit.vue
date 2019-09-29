@@ -1,10 +1,10 @@
 <template>
     <div class="edit-container">
-        <p>用户名:&nbsp;<input type="text"  v-model="person.username"></p>
-        <p>登陆名:&nbsp;<input type="text"  v-model="person.loginname"></p>     
+        <p>用户名:&nbsp;<input type="text"  v-model="person.realName"></p>
+        <p>登陆名:&nbsp;<input type="text"  v-model="person.nickName"></p>     
         <p>邮箱&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" v-model="person.email"></p> 
-        <p>地址&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" v-model="person.address"></p> 
-
+        <p>地址&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" v-model="person.credit"></p> 
+        <p>密码&nbsp;&nbsp;&nbsp;:&nbsp;<input type="text" v-model="pw"></p> 
         <P><button @click="edit">确认修改</button></P>
     </div>
 </template>
@@ -12,21 +12,37 @@
 export default {
     data() {
         return {
-            person:{
-                username:'张三',
-                loginname:'Ajeo',
-                gender:'1',
-                email:'23345@QQ.COM',
-                address:'东胜神州傲来国花果山水帘洞',
-                img_url:'http://img4.cache.netease.com/photo/0001/2010-04-17/64EFS71V05RQ0001.jpg',
-                usertype:'个人用户'
-            }, 
-                       
+            person:[{
+                realName: "",
+                nickName: "",
+                sex: 1,
+                email: "1111@qq.com",
+                insert: "",
+                credit: "88.0",
+                userType: 1,
+                img_url:''
+            }],
+            userId:'1',
+            token:'', 
+            pw:''    
         }
     },
     methods:{
        edit(){
-           console.log(this.person.username);
+           this.http.service('/user/updateUserInfo',{
+                userId:this.userId,
+                realName: this.person.realName,
+                nickName: this.person.nickName,
+                email: this.person.email,
+                insert: this.person.insert,
+                credit: this.person.credit,
+               })
+           .then((res)=>{
+               console.log(res);
+           })
+           .catch((res)=>{
+               console.log(res);
+           })
        }
     }
 }

@@ -5,7 +5,6 @@
            <p><span>登陆名:&nbsp;&nbsp;</span>{{ person.nickName }}</p>
            <p><span>性别:&nbsp;&nbsp;</span>{{ person.sex | aboutuser }}</p>
            <p><span>邮箱:&nbsp;&nbsp;</span>{{ person.email }}</p>
-           <p><span>地址:&nbsp;&nbsp;</span>{{ person.insert }}</p> 
            <p><span>地址:&nbsp;&nbsp;</span>{{ person.userType | abouttype }}</p> 
        </div>
        <div class="about-right">
@@ -37,7 +36,7 @@ export default {
                 userType: 1,
                 img_url:''
             }],
-            userId:'',
+            userId:'1',
             token:'',
         }
     },
@@ -57,22 +56,38 @@ export default {
             }
         }
     },
-    created(){
-        this.getUserInfo();
+    created(){       
+            this.getUserInfo();
     },
     methods:{
+        // islogin(){
+        //      this.getUserInfo();
+        //     //   console.log({user_account:this.person.userName,pw:this.person.userPassword})
+        //         this.http.service.post('/user/login',{'userAccount':this.userName,'pw':this.userPassword}).then(res=>{
+        //             if(res.status == 200) {
+        //                 console.log(res,1)
+        //             } else {
+        //                 this.$message.error('账号或者密码错误',2);
+        //             }
+        //         }).catch(err=>{
+        //                 console.log(err,3)
+        //             }
+        //         )
+        // },
         getUserInfo(){
-            this.userId = localStorage.getItem('userID');
-            this.token = localStorage.getItem('token')
-            this.http.service.post('/user/baseInfo',{'userId':this.userId,'token':this.token}).then(
+            // this.userId = localStorage.getItem('userID');
+            // this.token = localStorage.getItem('token')
+            this.http.service.post('/user/baseInfo',{'userId':this.userId}).then(
                 (res)=>{
                     console.log(res.data);
                     this.person = res.data;
+                   
                 }
             )
             .catch(
                 (res)=>{
-                    console.log(res)
+                    console.log(res) 
+               
                 }
             )
         },

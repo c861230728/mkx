@@ -5,9 +5,10 @@ const service = axios.create({
     timeout: 5000, // 请求超时
     baseURL: 'http://luoyuequan.cn:80',
     headers: {
-        // 'Content-Type':'application/json;charset=UTF-8',
-        'Content-Type':'application/x-www-form-urlencoded'
-// "token":''
+        'Content-Type':'application/json;charset=UTF-8',
+        'Content-Type':'application/x-www-form-urlencoded',
+        // 'Content-Type':'text/plain',
+        "token":''
     },
 
 })
@@ -47,7 +48,7 @@ export function post(url,data = {}) {
     let sendObject = {
         url: url,
         method: 'post',
-        data: data
+        data: JSON.stringify(data)
     }
     sendObject.data = JSON.stringify(data)
     return service(sendObject)

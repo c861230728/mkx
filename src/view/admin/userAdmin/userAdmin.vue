@@ -52,7 +52,9 @@ export default {
   },
   methods:{
     getuserlist(){
-      this.http.service.post('/user/allUserInfo',{}).then(
+      this.http.service.post('/user/allUserInfo',{
+        
+      }).then(
                 (res)=>{
                     console.log(res.data);
                     this.tableData = res.data;
