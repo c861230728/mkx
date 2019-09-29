@@ -86,6 +86,7 @@
     "type": "git",
     "url": "git+https://github.com/c861230728/mkx.git"
   },
+  "keywords": [],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/c861230728/mkx/issues"

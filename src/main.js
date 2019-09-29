@@ -14,6 +14,18 @@ Vue.use(Element);
 Vue.config.productionTip = false
 Vue.prototype.$axios = Axios;
 
+// 引入element-UI
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+//引入重置css
+import '../static/css/reset.css'
+
+//引入axios
+//  更改全局 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+import http from './axios/http.js' // axios实例化后引入取名http
+Vue.prototype.http = http
+
 /* eslint-disable no-new */
 var vm=new Vue({
   el: '#app',
