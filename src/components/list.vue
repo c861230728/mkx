@@ -24,7 +24,7 @@
       </section>
       <section class="conditionShow">
         <span>筛选条件</span>
-        <section v-for="( item ,index3) in conditionS" :key="index3">
+        <section v-for="(item ,index3) in conditionS" :key="index3" @click="del(index3)">
           {{item.lable}}
           <ul>
             <li v-for=" (item2,index4) in item.child" :key="index4">{{item2}}</li>
@@ -32,10 +32,26 @@
         </section>
       </section>
     </div>
-    <div class="exhibition-box"></div>
+    <div class="exhibition-box">
+      <ul class="goods-list-box">
+        <li v-for="(item,index5) in currentList" :key="index5" @click="particulars(index5)">
+          <span class="goods-name">{{item.goodName}}</span>
+          <span class="goods-price">{{item.price}}&nbsp;&#165;</span>
+        </li>
+      </ul>
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="list.length"
+        :page-size="pageNuber"
+        :hide-on-single-page="value"
+        @current-change="current"
+      ></el-pagination>
+    </div>
   </div>
 </template>
 <script>
+import { log } from "util";
 export default {
   props: [],
   data() {
@@ -83,12 +99,17 @@ export default {
           module: false
         }
       ], //筛选条件
-      list: [],
+
       hello_msg: "222",
       price1: "",
       price2: "",
       disabled: true, //是否确定激活按钮,
-      conditionS: []
+      conditionS: [],
+      //列表数据
+      list: [],
+      currentList: [],
+      value: false,
+      pageNuber: 15
     };
   },
   methods: {
@@ -99,7 +120,6 @@ export default {
       };
       let flg = 0;
       let flg2 = 0;
-
       if (this.conditionS.length != 0 && this.conditionS.length <= 6) {
         for (var j = 0; j < this.conditionS.length; j++) {
           // if (this.conditionS[j].lable == "颜色") {
@@ -130,38 +150,71 @@ export default {
           this.conditionS.push(A);
         }
       }
-
       this.$forceUpdate();
     },
 
     Custom() {
       let str = "";
-      let  val = "";
-      if(this.price1 == ""){
-          val = this.price2;
-          str = "元以下"
+      let val = "";
+      if (this.price1 == "") {
+        val = this.price2;
+        str = "元以下";
       }
-      if(this.price2 == ""){
+      if (this.price2 == "") {
         val = this.price1;
-          str = "元以上"
+        str = "元以上";
       }
-
-
       let newprice = {
         lable: "价格",
         child: [val + str]
       };
-
       if (this.conditionS.length != 0) {
         this.conditionS.map((item, index) => {
           if (item.lable == "价格") {
             this.conditionS[i].child[0] = newprice.child[0];
           }
         });
-      }else{
-          this.conditionS.push(newprice)
+      } else {
+        this.conditionS.push(newprice);
       }
+    },
+    //获取数据
+    listDate() {
+      if (arguments[0].method == "get") {
+        console.log(arguments[0].url);
+        this.$axios
+          .get(arguments[0].url)
+          .then(response => {
+            console.log(response);
+            this.list = response.data;
+            this.current(1);
+          })
+          .catch(error => {
+            console.log("error" + error);
+          });
+      }
+    },
+    //跳转详情页
+    particulars(i) {
+      let str = {
+        goodsId: this.list[i].goodID
+      };
+      // this.$router.push({name:"",params: str})
+    },
+    //分页数据
+    current(i) {
+      this.currentList = this.list.slice(
+        this.pageNuber * (i - 1),
+        this.pageNuber * i
+      );
+    },
+    //删除条件
+    del(j) {
+      this.conditionS.splice(j, 1);
     }
+  },
+  mounted() {
+    this.listDate({ url: "http://luoyuequan.cn/good/list", method: "get" });
   },
   watch: {
     price1() {
@@ -284,7 +337,41 @@ export default {
   }
   .exhibition-box {
     height: 600px;
-    border: 1px solid blue;
+    margin: 25px auto;
+    text-align: left;
+    > .goods-list-box {
+      box-sizing: border-box;
+
+      width: 100%;
+      height: 80%;
+      display: flex;
+      padding: 25px;
+      > li {
+        width: 250px;
+        height: 200px;
+        margin: 5px;
+        list-style: none;
+        padding: 15px;
+        box-sizing: border-box;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0px 0px 20px #cac4c4;
+        }
+        > span {
+          display: block;
+          margin: 5px 0;
+        }
+        > .goods-price {
+          color: red;
+          letter-spacing: 1px;
+        }
+        > .goods-name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
   }
 }
 </style>

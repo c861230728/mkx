@@ -23,7 +23,7 @@
 
       <div class="search-box">
         <div>
-          <input type="search" placeholder="请输入内容...."  v-model="searchVla" />
+          <input type="search" placeholder="请输入内容...." v-model="searchVla" />
           <div class="search-btn">搜索</div>
         </div>
         <ul class="hotSearch">
@@ -82,7 +82,7 @@
   </div>
 </template>
 <script>
-import { log } from "util";
+import { log, error } from "util";
 export default {
   props: [],
   data() {
@@ -151,12 +151,34 @@ export default {
         { title: "推荐3", imgSrc: "../../static/images/t3.jpg" },
         { title: "推荐4", imgSrc: "../../static/images/t4.jpg" }
       ],
-      searchVla:""
+      searchVla: ""
     };
   },
   methods: {
     typeItem(i) {
       this.classifyLable = this.classify[i];
+    },
+    listData() {
+      this.$axios({
+        method: arguments[0].method,
+        url: arguments[0].url,
+        data: arguments[0].data
+      })
+        .then(response => {
+          console.log(response);
+          this.list = response.data;
+          this.current(1);
+        })
+        .catch(error => {
+          console.log("error" + error);
+        });
+    },
+    mounted() {
+      this.listData({
+        url: "http://luoyuequan.cn/goodType/listAllInfo",
+        method: "post",
+        data: {}
+      });
     }
   }
 };
@@ -245,7 +267,7 @@ export default {
       padding: 8px;
       overflow-y: auto;
 
-     &::-webkit-scrollbar {
+      &::-webkit-scrollbar {
         width: 2px;
         height: 2px;
         background-color: #fff;
