@@ -163,24 +163,23 @@ export default {
         method: arguments[0].method,
         url: arguments[0].url,
         data: arguments[0].data
-      })
-        .then(response => {
+      }).then(response => {
           console.log(response);
-          this.list = response.data;
+          // this.list = response.data;
           this.current(1);
         })
         .catch(error => {
           console.log("error" + error);
         });
-    },
-    mounted() {
+    }
+  },
+   mounted() {
       this.listData({
         url: "http://luoyuequan.cn/goodType/listAllInfo",
         method: "post",
         data: {}
       });
     }
-  }
 };
 </script>
 <style lang="scss" scoped>
